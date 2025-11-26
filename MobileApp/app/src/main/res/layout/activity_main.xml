@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".MainActivity">
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurface">
+
+        <!-- Top Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:title="Scholar AI"
+            android:titleTextColor="?attr/colorOnPrimary"
+            android:elevation="4dp"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:popupTheme="@style/ThemeOverlay.Material3.Light" />
+
+        <!-- Chat RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="12dp"
+            android:clipToPadding="false"
+            android:background="?attr/colorSurface"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toTopOf="@id/chat_input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ===================== CHAT INPUT BAR ===================== -->
+        <LinearLayout
+            android:id="@+id/chat_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="?attr/colorSurface"
+            android:elevation="10dp"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Tools button (+) -->
+            <ImageView
+                android:id="@+id/button_tools"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_add_circle"
+                android:background="@drawable/input_button_bg"
+                android:contentDescription="Select Tools"
+                 />
+
+            <!-- Input field -->
+            <EditText
+                android:id="@+id/input_message"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:hint="Ask Scholar AI..."
+                android:paddingHorizontal="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:inputType="text"
+                android:textColor="?attr/colorOnSurface"
+                android:textColorHint="?attr/colorOnSurfaceVariant" />
+
+            <!-- Send button -->
+            <ImageView
+                android:id="@+id/button_send"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_send"
+                android:background="@drawable/input_button_bg"
+                android:contentDescription="Send"
+               />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ===================== SIDE NAVIGATION MENU ===================== -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="?attr/colorSurface"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/drawer_header"
+        app:itemIconTint="?attr/colorOnSurface"
+        app:itemTextColor="?attr/colorOnSurface" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

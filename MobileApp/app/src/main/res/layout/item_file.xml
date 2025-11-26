@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- File icon -->
+    <ImageView
+        android:id="@+id/file_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_info_details"
+        android:contentDescription="File icon" />
+
+    <!-- File name -->
+    <TextView
+        android:id="@+id/file_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="filename.txt"
+        android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface" />
+
+    <!-- Overflow menu for edit/delete/rename -->
+    <ImageView
+        android:id="@+id/file_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:src="@android:drawable/ic_menu_more"
+        android:contentDescription="More options"
+        android:padding="8dp" />
+</LinearLayout>
