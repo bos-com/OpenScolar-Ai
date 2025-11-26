@@ -9,18 +9,19 @@ Everything you need for studying, research, and productivity in one place.
 
 ---
 
-### 🤖 Powered By
+### 🤖 Powered By Open-Source AI
 
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-181818?style=for-the-badge&logo=anthropic&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+![Qwen](https://img.shields.io/badge/Qwen-FF6B6B?style=for-the-badge&logo=alibabacloud&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-1E90FF?style=for-the-badge&logo=AI&logoColor=white)
+![Kimi](https://img.shields.io/badge/Kimi-00D9FF?style=for-the-badge&logo=robot&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
 
 ### 🛠️ Built With
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
+![Mobile](https://img.shields.io/badge/Mobile-4285F4?style=for-the-badge&logo=android&logoColor=white)
 
 ---
 
@@ -32,7 +33,7 @@ Everything you need for studying, research, and productivity in one place.
 Upload PDFs, Word docs, or presentations and get summaries, key points, or answers to specific questions in seconds.
 
 ### 🧮 **Solve Complex Problems**
-Stuck on math, physics, or coding? Get step-by-step explanations that actually help you understand.
+Stuck on math, physics, or coding Get step-by-step explanations that actually help you understand.
 
 ### 🔍 **Smart Research Assistant**
 Ask about any topic and get well-researched answers with sources. No more endless tab switching.
@@ -42,9 +43,6 @@ Generate outlines, brainstorm ideas, or get writing suggestions for essays, repo
 
 ### ☁️ **Cloud-Connected**
 Access your Google Drive, Dropbox, or OneDrive files directly. No downloading and re-uploading.
-
-### 🎨 **Clean, Distraction-Free Interface**
-Dark mode for late-night study sessions. Light mode for daytime. Simple, beautiful, and fast.
 
 ---
 
@@ -58,7 +56,7 @@ Dark mode for late-night study sessions. Light mode for daytime. Simple, beautif
 
 ### ⭐ Why Choose Scholar AI?
 
-| ✅ Multiple AI models | ✅ Local & cloud files | ✅ No context switching |
+| ✅ Open-source AI | ✅ Local & cloud files | ✅ No context switching |
 |:---:|:---:|:---:|
 | **✅ Privacy-focused** | **✅ Clean interface** | **✅ Always improving** |
 
