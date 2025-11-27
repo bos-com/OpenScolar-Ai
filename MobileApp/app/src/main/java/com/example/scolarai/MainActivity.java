@@ -2,7 +2,6 @@ package com.example.scolarai;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -155,42 +154,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Send message
     private void sendMessage() {
         String text = inputMessage.getText().toString().trim();
-        if (text.isEmpty() && selectedTools.isEmpty() && attachedFiles.isEmpty()) {
-            Toast.makeText(this, "Enter a message, select a tool or attach a file", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        if (text.isEmpty()) return;
 
-        StringBuilder msgText = new StringBuilder();
-        if (!selectedTools.isEmpty()) {
-            msgText.append("[Tools: ");
-            for (int i = 0; i < selectedTools.size(); i++) {
-                msgText.append(selectedTools.get(i));
-                if (i != selectedTools.size() - 1) msgText.append(", ");
-            }
-            msgText.append("] ");
-        }
-
-        if (!attachedFiles.isEmpty()) {
-            msgText.append("[Attachments: ");
-            for (int i = 0; i < attachedFiles.size(); i++) {
-                msgText.append(attachedFiles.get(i).getName());
-                if (i != attachedFiles.size() - 1) msgText.append(", ");
-            }
-            msgText.append("] ");
-        }
-
-        msgText.append(text);
-
-        ChatMessage message = new ChatMessage(msgText.toString(), true, false);
-        chatMessages.add(message);
+        // Show user's message
+        ChatMessage userMessage = new ChatMessage(text, true, false);
+        chatMessages.add(userMessage);
         chatAdapter.notifyItemInserted(chatMessages.size() - 1);
         chatRecycler.scrollToPosition(chatMessages.size() - 1);
 
         inputMessage.setText("");
-        selectedTools.clear();
-        attachedFiles.clear();
+
+        // Send to Gemini
+        GeminiClient.sendPrompt(text, new GeminiClient.Callback() {
+            @Override
+            public void onResponse(String response) {
+                ChatMessage botMessage = new ChatMessage(response, false, false);
+                chatMessages.add(botMessage);
+                chatAdapter.notifyItemInserted(chatMessages.size() - 1);
+                chatRecycler.scrollToPosition(chatMessages.size() - 1);
+            }
+
+            @Override
+            public void onError(String error) {
+                ChatMessage errorMessage = new ChatMessage("Error: " + error, false, false);
+                chatMessages.add(errorMessage);
+                chatAdapter.notifyItemInserted(chatMessages.size() - 1);
+                chatRecycler.scrollToPosition(chatMessages.size() - 1);
+            }
+        });
     }
+
 }
